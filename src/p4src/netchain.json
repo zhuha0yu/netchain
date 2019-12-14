@@ -1,0 +1,6301 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["tmp_6", 32, false],
+        ["tmp_7", 32, false],
+        ["tmp_8", 32, false],
+        ["temp_0", 32, false],
+        ["tempport_0", 16, false],
+        ["tmp", 1, false],
+        ["tmp_0", 1, false],
+        ["tmp_1", 1, false],
+        ["tmp_2", 1, false],
+        ["tmp_3", 1, false],
+        ["tmp_4", 1, false],
+        ["tmp_5", 1, false],
+        ["metadata.seq", 32, false],
+        ["metadata.temp", 16, false],
+        ["metadata.index", 14, false],
+        ["metadata.fo", 2, false],
+        ["_padding_0", 1, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["dscp", 6, false],
+        ["ecn", 2, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 4,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["seqNo", 32, false],
+        ["ackNo", 32, false],
+        ["dataOffset", 4, false],
+        ["res", 4, false],
+        ["cwr", 1, false],
+        ["ece", 1, false],
+        ["urg", 1, false],
+        ["ack", 1, false],
+        ["psh", 1, false],
+        ["rst", 1, false],
+        ["syn", 1, false],
+        ["fin", 1, false],
+        ["window", 16, false],
+        ["checksum", 16, false],
+        ["urgentPtr", 16, false]
+      ]
+    },
+    {
+      "name" : "udp_t",
+      "id" : 5,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["dstPort", 16, false],
+        ["payloadlen", 16, false],
+        ["checksum", 16, false]
+      ]
+    },
+    {
+      "name" : "netchainlen_t",
+      "id" : 6,
+      "fields" : [
+        ["len", 16, false]
+      ]
+    },
+    {
+      "name" : "netchain_t",
+      "id" : 7,
+      "fields" : [
+        ["operation", 16, false],
+        ["sequence", 32, false],
+        ["Key", 16, false],
+        ["Value", 64, false]
+      ]
+    },
+    {
+      "name" : "netchainip_t",
+      "id" : 8,
+      "fields" : [
+        ["ipaddr", 32, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 3,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp",
+      "id" : 4,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "udp",
+      "id" : 5,
+      "header_type" : "udp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainlen",
+      "id" : 6,
+      "header_type" : "netchainlen_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchain",
+      "id" : 7,
+      "header_type" : "netchain_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[0]",
+      "id" : 8,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[1]",
+      "id" : 9,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[2]",
+      "id" : 10,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[3]",
+      "id" : 11,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[4]",
+      "id" : 12,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[5]",
+      "id" : 13,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[6]",
+      "id" : 14,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[7]",
+      "id" : 15,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[8]",
+      "id" : 16,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[9]",
+      "id" : 17,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[10]",
+      "id" : 18,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[11]",
+      "id" : 19,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[12]",
+      "id" : 20,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[13]",
+      "id" : 21,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[14]",
+      "id" : 22,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[15]",
+      "id" : 23,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[16]",
+      "id" : 24,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[17]",
+      "id" : 25,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[18]",
+      "id" : 26,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[19]",
+      "id" : 27,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[20]",
+      "id" : 28,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[21]",
+      "id" : 29,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[22]",
+      "id" : 30,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[23]",
+      "id" : 31,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[24]",
+      "id" : 32,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[25]",
+      "id" : 33,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[26]",
+      "id" : 34,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[27]",
+      "id" : 35,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[28]",
+      "id" : 36,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[29]",
+      "id" : 37,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[30]",
+      "id" : 38,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "netchainip[31]",
+      "id" : 39,
+      "header_type" : "netchainip_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [
+    {
+      "name" : "netchainip",
+      "id" : 0,
+      "header_type" : "netchainip_t",
+      "size" : 32,
+      "header_ids" : [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39]
+    }
+  ],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [
+    {
+      "id" : 1,
+      "name" : "fl",
+      "elements" : []
+    },
+    {
+      "id" : 2,
+      "name" : "fl_0",
+      "elements" : []
+    }
+  ],
+  "errors" : [
+    ["NoError", 1],
+    ["PacketTooShort", 2],
+    ["NoMatch", 3],
+    ["StackOutOfBounds", 4],
+    ["HeaderTooShort", 5],
+    ["ParserTimeout", 6],
+    ["ParserInvalidArgument", 7]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x06",
+              "mask" : null,
+              "next_state" : "parse_tcp"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x11",
+              "mask" : null,
+              "next_state" : "parse_udp"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_udp",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "udp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x8b5e",
+              "mask" : null,
+              "next_state" : "parse_netchain_len"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchain"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_netchain_len",
+          "id" : 4,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainlen"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0000",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip1"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip1",
+          "id" : 5,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[0]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0001",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip2"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip2",
+          "id" : 6,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[1]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0002",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip3"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip3",
+          "id" : 7,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[2]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0003",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip4"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip4",
+          "id" : 8,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[3]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0004",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip5"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip5",
+          "id" : 9,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[4]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0005",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip6"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip6",
+          "id" : 10,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[5]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0006",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip7"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip7",
+          "id" : 11,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[6]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0007",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            },
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain_ip8"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_netchain_ip8",
+          "id" : 12,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "netchainip[7]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_netchain"
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_tcp",
+          "id" : 13,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/include/parsers.p4",
+        "line" : 150,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "ipv4", "tcp", "udp", "netchainlen", "netchainip[0]", "netchainip[1]", "netchainip[2]", "netchainip[3]", "netchainip[4]", "netchainip[5]", "netchainip[6]", "netchainip[7]", "netchainip[8]", "netchainip[9]", "netchainip[10]", "netchainip[11]", "netchainip[12]", "netchainip[13]", "netchainip[14]", "netchainip[15]", "netchainip[16]", "netchainip[17]", "netchainip[18]", "netchainip[19]", "netchainip[20]", "netchainip[21]", "netchainip[22]", "netchainip[23]", "netchainip[24]", "netchainip[25]", "netchainip[26]", "netchainip[27]", "netchainip[28]", "netchainip[29]", "netchainip[30]", "netchainip[31]", "netchain"]
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [
+    {
+      "name" : "MyIngress.key_value_reg",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/netchain.p4",
+        "line" : 25,
+        "column" : 28,
+        "source_fragment" : "key_value_reg"
+      },
+      "size" : 4096,
+      "bitwidth" : 64
+    },
+    {
+      "name" : "MyIngress.seq_reg",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "p4src/l3_forward.p4",
+        "line" : 0,
+        "column" : 25,
+        "source_fragment" : "seq_reg"
+      },
+      "size" : 1,
+      "bitwidth" : 32
+    }
+  ],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/netchain.p4",
+        "line" : 97,
+        "column" : 1,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "algo" : "csum16",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["ipv4", "version"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ihl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dscp"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ecn"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "totalLen"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "identification"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "flags"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "fragOffset"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "ttl"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "protocol"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "srcAddr"]
+        },
+        {
+          "type" : "field",
+          "value" : ["ipv4", "dstAddr"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 4,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 2,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 2,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 2,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 2,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.set_nhop",
+      "id" : 11,
+      "runtime_data" : [
+        {
+          "name" : "dstAddr",
+          "bitwidth" : 48
+        },
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 7,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.srcAddr = hdr.ethernet.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 10,
+            "column" : 8,
+            "source_fragment" : "hdr.ethernet.dstAddr = dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 13,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "ttl"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 16,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl = hdr.ipv4.ttl - 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.NetChain_delete",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "clone_ingress_pkt_to_egress",
+          "parameters" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00000064"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 4,
+            "column" : 4,
+            "source_fragment" : "clone(CloneType.I2E, 100)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.NetChain_insert",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "clone_ingress_pkt_to_egress",
+          "parameters" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00000064"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x2"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 9,
+            "column" : 4,
+            "source_fragment" : "clone(CloneType.I2E, 100)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.Forward_next_node",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 28,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainlen.len=hdr.netchainlen.len-1"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[0]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 29,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[0].setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "totalLen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 31,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.totalLen=hdr.ipv4.totalLen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "payloadlen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["udp", "payloadlen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 32,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.payloadlen=hdr.udp.payloadlen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "checksum"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 33,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.checksum=0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 16,
+            "column" : 4,
+            "source_fragment" : "temp="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 17,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 18,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.srcAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tempport_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 19,
+            "column" : 4,
+            "source_fragment" : "tempport="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 20,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.srcPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 21,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.dstPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 22,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "operation"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x0005"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["netchain", "operation"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 23,
+            "column" : 4,
+            "source_fragment" : "hdr.netchain.operation="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["netchainip[1]", "ipaddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 39,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 40,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.NetChain_write",
+      "id" : 15,
+      "runtime_data" : [
+        {
+          "name" : "index",
+          "bitwidth" : 14
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "local",
+                    "value" : 0
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 66,
+            "column" : 24,
+            "source_fragment" : "(bit<32>)index"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.key_value_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "field",
+              "value" : ["netchain", "Value"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 66,
+            "column" : 4,
+            "source_fragment" : "key_value_reg.write((bit<32>)index,hdr.netchain.Value)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 28,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainlen.len=hdr.netchainlen.len-1"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[0]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 29,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[0].setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "totalLen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 31,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.totalLen=hdr.ipv4.totalLen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "payloadlen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["udp", "payloadlen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 32,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.payloadlen=hdr.udp.payloadlen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "checksum"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 33,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.checksum=0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 16,
+            "column" : 4,
+            "source_fragment" : "temp="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 17,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 18,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.srcAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tempport_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 19,
+            "column" : 4,
+            "source_fragment" : "tempport="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 20,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.srcPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 21,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.dstPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 22,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "operation"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x0005"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["netchain", "operation"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 23,
+            "column" : 4,
+            "source_fragment" : "hdr.netchain.operation="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["netchainip[1]", "ipaddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 39,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 40,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.NetChain_read",
+      "id" : 16,
+      "runtime_data" : [
+        {
+          "name" : "index",
+          "bitwidth" : 14
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "local",
+                    "value" : 0
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 73,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)index"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "Value"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.key_value_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 73,
+            "column" : 4,
+            "source_fragment" : "key_value_reg.read(hdr.netchain.Value,(bit<32>)index)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 74,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainlen.len=1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0032"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 75,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.totalLen=50"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "payloadlen"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x001e"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 76,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.payloadlen=30"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[1]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 77,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[1].setInvalid()"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[2]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 78,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[2].setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 28,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainlen.len=hdr.netchainlen.len-1"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[0]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 29,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[0].setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x002e"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 31,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.totalLen=hdr.ipv4.totalLen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "payloadlen"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x001a"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 32,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.payloadlen=hdr.udp.payloadlen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "checksum"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 33,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.checksum=0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 16,
+            "column" : 4,
+            "source_fragment" : "temp=hdr.ipv4.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 17,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.dstAddr=hdr.ipv4.srcAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 18,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.srcAddr=temp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tempport_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 19,
+            "column" : 4,
+            "source_fragment" : "tempport=hdr.udp.srcPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 20,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.srcPort=hdr.udp.dstPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tempport_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 21,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.dstPort=tempport"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 22,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.ttl=255"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "operation"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0005"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 23,
+            "column" : 4,
+            "source_fragment" : "hdr.netchain.operation=5"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 39,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 40,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.NetChain_transfer",
+      "id" : 17,
+      "runtime_data" : [
+        {
+          "name" : "index",
+          "bitwidth" : 14
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "local",
+                    "value" : 0
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 84,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)index"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "Value"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.key_value_reg"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 84,
+            "column" : 4,
+            "source_fragment" : "key_value_reg.read(hdr.netchain.Value,(bit<32>)index)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "operation"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 85,
+            "column" : 4,
+            "source_fragment" : "hdr.netchain.operation=1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 28,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainlen.len=hdr.netchainlen.len-1"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[0]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 29,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[0].setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "totalLen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 31,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.totalLen=hdr.ipv4.totalLen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "payloadlen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["udp", "payloadlen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 32,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.payloadlen=hdr.udp.payloadlen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "checksum"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 33,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.checksum=0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 16,
+            "column" : 4,
+            "source_fragment" : "temp="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 17,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 18,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.srcAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tempport_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 19,
+            "column" : 4,
+            "source_fragment" : "tempport="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 20,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.srcPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 21,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.dstPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 22,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "operation"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x0005"
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x0001"
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 23,
+            "column" : 4,
+            "source_fragment" : "hdr.netchain.operation="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["netchainip[1]", "ipaddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 39,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 40,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.assignseq",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.seq"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.seq"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 93,
+            "column" : 4,
+            "source_fragment" : "meta.seq=meta.seq+1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "sequence"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.seq"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 94,
+            "column" : 4,
+            "source_fragment" : "hdr.netchain.sequence=meta.seq"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.seq_reg"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.seq"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 95,
+            "column" : 4,
+            "source_fragment" : "seq_reg.write((bit<32>)0,meta.seq)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.modify_dst",
+      "id" : 19,
+      "runtime_data" : [
+        {
+          "name" : "newip",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 99,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.dstAddr=newip"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainip[0]", "ipaddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 100,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[0].ipaddr=newip"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.modify_dst_my",
+      "id" : 20,
+      "runtime_data" : [
+        {
+          "name" : "newip",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 104,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.dstAddr=newip"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainip[1]", "ipaddr"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 105,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[1].ipaddr=newip"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.Failover_my",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[1]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/fast_fo.p4",
+            "line" : 4,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[1].setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchainlen", "len"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 46,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainlen.len=hdr.netchainlen.len-1"
+          }
+        },
+        {
+          "op" : "remove_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "netchainip[0]"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 47,
+            "column" : 4,
+            "source_fragment" : "hdr.netchainip[0].setInvalid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "totalLen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["ipv4", "totalLen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 49,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.totalLen=hdr.ipv4.totalLen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "payloadlen"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["udp", "payloadlen"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xfffc"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 50,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.payloadlen=hdr.udp.payloadlen-4"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "checksum"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 51,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.checksum=0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "temp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 16,
+            "column" : 4,
+            "source_fragment" : "temp="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 17,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "temp_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "srcAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 18,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.srcAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tempport_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 19,
+            "column" : 4,
+            "source_fragment" : "tempport="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "srcPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 20,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.srcPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["udp", "dstPort"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tempport_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["udp", "dstPort"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 21,
+            "column" : 4,
+            "source_fragment" : "hdr.udp.dstPort="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 22,
+            "column" : 4,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["netchain", "operation"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0x0005"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["netchain", "operation"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "==",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["netchainlen", "len"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x0000"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 23,
+            "column" : 4,
+            "source_fragment" : "hdr.netchain.operation="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["netchainip[2]", "ipaddr"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "dstAddr"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 57,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.dstAddr="
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "ttl"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "?",
+                  "left" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["ipv4", "ttl"]
+                  },
+                  "cond" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "not",
+                      "left" : null,
+                      "right" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "==",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["netchainlen", "len"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x0000"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 58,
+            "column" : 8,
+            "source_fragment" : "hdr.ipv4.ttl="
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_0",
+      "id" : 23,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_1",
+      "id" : 24,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_2",
+      "id" : 25,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "netchain37",
+      "id" : 26,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.seq"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.seq_reg"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 37,
+            "column" : 20,
+            "source_fragment" : "seq_reg.read(meta.seq,(bit<32>)0)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "netchain38",
+      "id" : 27,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 38,
+            "column" : 23,
+            "source_fragment" : "!seq.apply().hit&&meta.seq>hdr.netchain.sequence"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "netchain38_0",
+      "id" : 28,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : ">",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "metadata.seq"]
+                      },
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["netchain", "sequence"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 38,
+            "column" : 23,
+            "source_fragment" : "!seq.apply().hit&&meta.seq>hdr.netchain.sequence"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_3",
+      "id" : 29,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_4",
+      "id" : 30,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "netchain44",
+      "id" : 31,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.seq_reg"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "field",
+              "value" : ["netchain", "sequence"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 44,
+            "column" : 24,
+            "source_fragment" : "seq_reg.write((bit<32>)0,hdr.netchain.sequence)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_5",
+      "id" : 32,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_6",
+      "id" : 33,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_7",
+      "id" : 34,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_8",
+      "id" : 35,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "netchain53",
+      "id" : 36,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.fo"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00"
+            }
+          ],
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 53,
+            "column" : 32,
+            "source_fragment" : "meta.fo=0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "act_9",
+      "id" : 37,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : true
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name" : "act_10",
+      "id" : 38,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "b2d",
+                  "left" : null,
+                  "right" : {
+                    "type" : "bool",
+                    "value" : false
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/netchain.p4",
+        "line" : 21,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "node_2",
+      "tables" : [
+        {
+          "name" : "MyIngress.ipv4_lpm",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 21,
+            "column" : 6,
+            "source_fragment" : "ipv4_lpm"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11, 7],
+          "actions" : ["MyIngress.set_nhop", "MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.set_nhop" : null,
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.pkt_for_me",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 127,
+            "column" : 6,
+            "source_fragment" : "pkt_for_me"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hdr.udp.dstPort",
+              "target" : ["udp", "dstPort"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 128,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [1],
+          "actions" : ["NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "__HIT__" : "tbl_act",
+            "__MISS__" : "tbl_act_0"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_act",
+          "id" : 2,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [22],
+          "actions" : ["act"],
+          "base_default_next" : "node_7",
+          "next_tables" : {
+            "act" : "node_7"
+          },
+          "default_entry" : {
+            "action_id" : 22,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_0",
+          "id" : 3,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [23],
+          "actions" : ["act_0"],
+          "base_default_next" : "node_7",
+          "next_tables" : {
+            "act_0" : "node_7"
+          },
+          "default_entry" : {
+            "action_id" : 23,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_netchain37",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 37,
+            "column" : 20,
+            "source_fragment" : "seq_reg.read(meta.seq,(bit<32>)0)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [26],
+          "actions" : ["netchain37"],
+          "base_default_next" : "MyIngress.seq",
+          "next_tables" : {
+            "netchain37" : "MyIngress.seq"
+          },
+          "default_entry" : {
+            "action_id" : 26,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.seq",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 151,
+            "column" : 6,
+            "source_fragment" : "seq"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.netchain.sequence",
+              "target" : ["netchain", "sequence"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18, 2],
+          "actions" : ["MyIngress.assignseq", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "__HIT__" : "tbl_act_1",
+            "__MISS__" : "tbl_act_2"
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_act_1",
+          "id" : 6,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [24],
+          "actions" : ["act_1"],
+          "base_default_next" : "node_12",
+          "next_tables" : {
+            "act_1" : "node_12"
+          },
+          "default_entry" : {
+            "action_id" : 24,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_2",
+          "id" : 7,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [25],
+          "actions" : ["act_2"],
+          "base_default_next" : "node_12",
+          "next_tables" : {
+            "act_2" : "node_12"
+          },
+          "default_entry" : {
+            "action_id" : 25,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_netchain38",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 38,
+            "column" : 23,
+            "source_fragment" : "!seq.apply().hit&&meta.seq>hdr.netchain.sequence"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [27],
+          "actions" : ["netchain38"],
+          "base_default_next" : "node_15",
+          "next_tables" : {
+            "netchain38" : "node_15"
+          },
+          "default_entry" : {
+            "action_id" : 27,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_netchain38_0",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 38,
+            "column" : 23,
+            "source_fragment" : "!seq.apply().hit&&meta.seq>hdr.netchain.sequence"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [28],
+          "actions" : ["netchain38_0"],
+          "base_default_next" : "node_15",
+          "next_tables" : {
+            "netchain38_0" : "node_15"
+          },
+          "default_entry" : {
+            "action_id" : 28,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.drop_table",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "p4src/l3_forward.p4",
+            "line" : 32,
+            "column" : 6,
+            "source_fragment" : "drop_table"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.ipv4.srcAddr",
+              "target" : ["ipv4", "srcAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [0, 8],
+          "actions" : ["NoAction", "MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "NoAction" : null,
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_netchain44",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 44,
+            "column" : 24,
+            "source_fragment" : "seq_reg.write((bit<32>)0,hdr.netchain.sequence)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [31],
+          "actions" : ["netchain44"],
+          "base_default_next" : "MyIngress.op",
+          "next_tables" : {
+            "netchain44" : "MyIngress.op"
+          },
+          "default_entry" : {
+            "action_id" : 31,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.op",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 138,
+            "column" : 6,
+            "source_fragment" : "op"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.netchain.operation",
+              "target" : ["netchain", "operation"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13, 12, 10],
+          "actions" : ["MyIngress.NetChain_insert", "MyIngress.NetChain_delete", "MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "__HIT__" : "tbl_act_3",
+            "__MISS__" : "tbl_act_4"
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_act_3",
+          "id" : 13,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [29],
+          "actions" : ["act_3"],
+          "base_default_next" : "node_21",
+          "next_tables" : {
+            "act_3" : "node_21"
+          },
+          "default_entry" : {
+            "action_id" : 29,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_4",
+          "id" : 14,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [30],
+          "actions" : ["act_4"],
+          "base_default_next" : "node_21",
+          "next_tables" : {
+            "act_4" : "node_21"
+          },
+          "default_entry" : {
+            "action_id" : 30,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.find_key_index",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 109,
+            "column" : 6,
+            "source_fragment" : "find_key_index"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.netchain.Key",
+              "target" : ["netchain", "Key"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hdr.netchain.operation",
+              "target" : ["netchain", "operation"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 4096,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16, 15, 17, 9],
+          "actions" : ["MyIngress.NetChain_read", "MyIngress.NetChain_write", "MyIngress.NetChain_transfer", "MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "__HIT__" : "tbl_act_5",
+            "__MISS__" : "tbl_act_6"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_act_5",
+          "id" : 16,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [32],
+          "actions" : ["act_5"],
+          "base_default_next" : "node_25",
+          "next_tables" : {
+            "act_5" : "node_25"
+          },
+          "default_entry" : {
+            "action_id" : 32,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_6",
+          "id" : 17,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [33],
+          "actions" : ["act_6"],
+          "base_default_next" : "node_25",
+          "next_tables" : {
+            "act_6" : "node_25"
+          },
+          "default_entry" : {
+            "action_id" : 33,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_netchain53",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 53,
+            "column" : 39,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [36],
+          "actions" : ["netchain53"],
+          "base_default_next" : "MyIngress.recovery_my",
+          "next_tables" : {
+            "netchain53" : "MyIngress.recovery_my"
+          },
+          "default_entry" : {
+            "action_id" : 36,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.recovery_my",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 176,
+            "column" : 6,
+            "source_fragment" : "recovery_my"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hdr.netchain.Key",
+              "target" : ["netchain", "Key"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [20, 4],
+          "actions" : ["MyIngress.modify_dst_my", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "__HIT__" : "tbl_act_7",
+            "__MISS__" : "tbl_act_8"
+          },
+          "default_entry" : {
+            "action_id" : 4,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_act_7",
+          "id" : 20,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [34],
+          "actions" : ["act_7"],
+          "base_default_next" : "node_30",
+          "next_tables" : {
+            "act_7" : "node_30"
+          },
+          "default_entry" : {
+            "action_id" : 34,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_8",
+          "id" : 21,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [35],
+          "actions" : ["act_8"],
+          "base_default_next" : "node_30",
+          "next_tables" : {
+            "act_8" : "node_30"
+          },
+          "default_entry" : {
+            "action_id" : 35,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.fast_failover_my",
+          "id" : 22,
+          "source_info" : {
+            "filename" : "p4src/fast_fo.p4",
+            "line" : 20,
+            "column" : 6,
+            "source_fragment" : "fast_failover_my"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 64,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6, 21],
+          "actions" : ["NoAction", "MyIngress.Failover_my"],
+          "base_default_next" : "MyIngress.ipv4_lpm",
+          "next_tables" : {
+            "NoAction" : "MyIngress.ipv4_lpm",
+            "MyIngress.Failover_my" : "MyIngress.ipv4_lpm"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyIngress.recovery",
+          "id" : 23,
+          "source_info" : {
+            "filename" : "p4src/check_nc_pkt.p4",
+            "line" : 162,
+            "column" : 6,
+            "source_fragment" : "recovery"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            },
+            {
+              "match_type" : "exact",
+              "name" : "hdr.netchain.Key",
+              "target" : ["netchain", "Key"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [19, 3],
+          "actions" : ["MyIngress.modify_dst", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "__HIT__" : "tbl_act_9",
+            "__MISS__" : "tbl_act_10"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_act_9",
+          "id" : 24,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [37],
+          "actions" : ["act_9"],
+          "base_default_next" : "node_36",
+          "next_tables" : {
+            "act_9" : "node_36"
+          },
+          "default_entry" : {
+            "action_id" : 37,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_act_10",
+          "id" : 25,
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [38],
+          "actions" : ["act_10"],
+          "base_default_next" : "node_36",
+          "next_tables" : {
+            "act_10" : "node_36"
+          },
+          "default_entry" : {
+            "action_id" : 38,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.fast_failover",
+          "id" : 26,
+          "source_info" : {
+            "filename" : "p4src/fast_fo.p4",
+            "line" : 7,
+            "column" : 6,
+            "source_fragment" : "fast_failover"
+          },
+          "key" : [
+            {
+              "match_type" : "lpm",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "lpm",
+          "type" : "simple",
+          "max_size" : 64,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [5, 14],
+          "actions" : ["NoAction", "MyIngress.Forward_next_node"],
+          "base_default_next" : "MyIngress.ipv4_lpm",
+          "next_tables" : {
+            "NoAction" : "MyIngress.ipv4_lpm",
+            "MyIngress.Forward_next_node" : "MyIngress.ipv4_lpm"
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_2",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 31,
+            "column" : 15,
+            "source_fragment" : "!hdr.netchain.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["netchain", "$valid$"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "MyIngress.ipv4_lpm",
+          "false_next" : "MyIngress.pkt_for_me"
+        },
+        {
+          "name" : "node_7",
+          "id" : 1,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "tmp_5"]
+              }
+            }
+          },
+          "true_next" : "tbl_netchain37",
+          "false_next" : "MyIngress.recovery"
+        },
+        {
+          "name" : "node_12",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 38,
+            "column" : 23,
+            "source_fragment" : "!seq.apply().hit"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "not",
+                  "left" : null,
+                  "right" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "d2b",
+                      "left" : null,
+                      "right" : {
+                        "type" : "field",
+                        "value" : ["scalars", "tmp_2"]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_netchain38",
+          "false_next" : "tbl_netchain38_0"
+        },
+        {
+          "name" : "node_15",
+          "id" : 3,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "tmp_3"]
+              }
+            }
+          },
+          "true_next" : "MyIngress.drop_table",
+          "false_next" : "tbl_netchain44"
+        },
+        {
+          "name" : "node_21",
+          "id" : 4,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "tmp_1"]
+              }
+            }
+          },
+          "true_next" : null,
+          "false_next" : "MyIngress.find_key_index"
+        },
+        {
+          "name" : "node_25",
+          "id" : 5,
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "tmp_0"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "tbl_netchain53"
+        },
+        {
+          "name" : "node_30",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 54,
+            "column" : 35,
+            "source_fragment" : "!recovery_my.apply().hit"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "MyIngress.fast_failover_my",
+          "false_next" : "MyIngress.ipv4_lpm"
+        },
+        {
+          "name" : "node_36",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "p4src/netchain.p4",
+            "line" : 69,
+            "column" : 23,
+            "source_fragment" : "!recovery.apply().hit"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "not",
+              "left" : null,
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "d2b",
+                  "left" : null,
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "tmp_4"]
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "MyIngress.fast_failover",
+          "false_next" : "MyIngress.ipv4_lpm"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "p4src/netchain.p4",
+        "line" : 83,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [
+    {
+      "name" : "cksum",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "p4src/netchain.p4",
+        "line" : 97,
+        "column" : 1,
+        "source_fragment" : "update_checksum( ..."
+      },
+      "target" : ["ipv4", "hdrChecksum"],
+      "type" : "generic",
+      "calculation" : "calc",
+      "verify" : false,
+      "update" : true,
+      "if_cond" : {
+        "type" : "expression",
+        "value" : {
+          "op" : "d2b",
+          "left" : null,
+          "right" : {
+            "type" : "field",
+            "value" : ["ipv4", "$valid$"]
+          }
+        }
+      }
+    }
+  ],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "/home/zhuhaoyu/15_netchain/src/p4src/netchain.p4i",
+  "__meta__" : {
+    "version" : [2, 18],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}
