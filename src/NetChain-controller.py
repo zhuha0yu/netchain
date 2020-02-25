@@ -14,7 +14,6 @@ num_f=2#f in paper
 
 REG_SIZE = 4096
 operations = {'write': 1, 'read': 2, 'insert': 3, 'delete': 4}
-saveFiles = {'keys': 1, 'chain': 2}
 
 class NetChainController(object):
 
@@ -24,24 +23,35 @@ class NetChainController(object):
         self.active_switches = ['s2','s3','s4','s5']
         self.failSwitch =set()
         self.sw_memory_key_index = {}	# sw name: 	[keys saved in order]
-        self.keys={}
-        self.node_keys=[[] for i in range(num_virtual_node)]
+        self.keys={}#stores keys-switches assignment
+        self.node_keys=[[] for i in range(num_virtual_node)]#stores keys assigned to a node
         self.ip_addr={}
         self.hashing=consistent_hashing(num_virtual_node,len(self.active_switches),num_f)
-        self.hashing.assign_virtual_node_to_sw(self.active_switches)
-        self.save_nodes_assignment()
         self.init()
+        self.get_ip_addr()
+        if(not self.load_nodes_assignment()):
+            self.hashing.assign_virtual_node_to_sw(self.active_switches)
+            self.save_nodes_assignment()
+            
+        if(not self.load_keys_assignment()):
+            self.sw_memory_key_index = {}	# sw name: 	[keys saved in order]
+            self.init_switches_index(self.active_switches)
+            self.keys={}#stores keys-switches assignment
+            self.node_keys=[[] for i in range(num_virtual_node)]#stores keys assigned to a node
+            
+       
+        
         
 
     def init(self):
         #Create routing and inital forward in tables
         routeControl = RoutingController()
         for sw, control in routeControl.controllers.items():
-            intf = routeControl.topo.get_cpu_port_intf(sw)
-            port = routeControl.topo[sw]['interfaces_to_port'][intf]
-            print("mirror adding for "+intf+" in port "+str(port))
-            control.mirroring_add(100, port)
-            #routeControl.main()
+                intf = routeControl.topo.get_cpu_port_intf(sw)
+                port = routeControl.topo[sw]['interfaces_to_port'][intf]
+                print("mirror adding for "+intf+" in port "+str(port))
+                control.mirroring_add(100, port)
+                #routeControl.main()
 
         for sw in routeControl.topo.get_p4switches():
             
@@ -49,12 +59,12 @@ class NetChainController(object):
             routeControl.op(sw)
             routeControl.pkt_for_me(sw)
             routeControl.ipv4_lpm(sw)
-            
-
         self.topo = routeControl.topo
         self.controllers = routeControl.controllers
-        self.get_ip_addr()
-        self.init_switches_index(self.active_switches)
+            
+
+        
+        
 
         
     def assign_key_to_nodes(self, key):
@@ -63,12 +73,13 @@ class NetChainController(object):
         self.node_keys[node].append(key)
         for sw in list_sw:
             if sw in self.active_switches:
-                self.insert_index_to_switch_table(sw, key)
+                self.find_index_to_switch_table(sw, key)
         self.keys.update({key:list_sw})
+        self.save_keys_assignment()
             
         
 
-    def insert_index_to_switch_table(self,sw,key):
+    def find_index_to_switch_table(self,sw,key):
         try: 
             idx = self.sw_memory_key_index[sw].index('None')
             self.sw_memory_key_index[sw][idx]=key
@@ -76,15 +87,16 @@ class NetChainController(object):
         except:    
             idx = len(self.sw_memory_key_index[sw])
             self.sw_memory_key_index[sw].append(key)
+        
+        self.insert_index_to_switch_table(sw,key,idx)
             
                 
-        
+    def insert_index_to_switch_table(self,sw,key,idx):
         print ('\n#### %s: insert to table ####' %sw)
         self.controllers[sw].table_add("find_key_index", "NetChain_read",[str(key),str(2)],[str(idx)])
         self.controllers[sw].table_add("find_key_index", "NetChain_write",[str(key),str(1)],[str(idx)])
-        self.controllers[sw].table_add("find_key_index", "NetChain_transfer",[str(key),str(6)],[str(idx)])
 
-    def eliminate_key_from_group(self, key):
+    def eliminate_key_from_nodes(self, key):
         
         node=self.hashing.calculate_hashing(key)
         list_sw=self.hashing.find_chain_node(node,1)
@@ -96,23 +108,46 @@ class NetChainController(object):
             if sw not in self.active_switches:
                 continue
             self.delete_key_from_switch(sw, key)
+        self.save_keys_assignment()
         
     
     def delete_key_from_switch(self, sw_name, key):
         print('\n#### %s: delete from table ####' %sw_name) 
-        self.controllers[sw_name].table_delete_match("find_key_index",[str(key),])
+        self.controllers[sw_name].table_delete_match("find_key_index",[str(key),str(1)])
+        self.controllers[sw_name].table_delete_match("find_key_index",[str(key),str(2)])
+        
         
 
 
-    def save_files_for_host(self, options):
-        for op in options: 
-            if op == saveFiles['keys']:
-                with open('Keys.csv', 'w') as f: 
-                    for key, group in self.grpForKey.items():
-                        f.write('%s,%s\n'%(key,group[6]))
+    def save_keys_assignment(self):
+        with open('keys_controller.csv', 'w') as f:
+            for sw in self.active_switches:
+                for idx in range(len(self.sw_memory_key_index[sw])):
+                    key=self.sw_memory_key_index[sw][idx]
+                    f.write('%s,%s\n'%(sw,key))
+            f.close()
 
-            elif op == saveFiles['chain']:
-                self.save_ipChain()
+    def load_keys_assignment(self):
+        try:
+            with open('keys_controller.csv', 'r') as f:
+                self.sw_memory_key_index={}
+                self.init_switches_index(self.active_switches)
+
+                for line in f.readlines():
+                    sw=line.split(',')[0]
+                    key=int(line.split(',')[1])
+                    self.sw_memory_key_index[sw].append(key)
+                    self.insert_index_to_switch_table(sw,key,self.sw_memory_key_index[sw].index(key))
+                    if not self.keys.has_key(key):
+                        node=self.hashing.calculate_hashing(key)
+                        list_sw=self.hashing.find_chain_node(node,1)
+                        self.node_keys[node].append(key)
+                        self.keys.update({key:list_sw})
+            return True
+        except IOError:
+            return False
+
+        
 
     def load_nodes_assignment(self):
         try:
@@ -128,8 +163,7 @@ class NetChainController(object):
             for sw in self.hashing.get_node_assignment():
                 f.write(sw+'\n')
             f.close()
-    def save_keys_assignment(self):
-        a=1
+
 
     def init_switches_index(self,sws):
         
@@ -212,7 +246,7 @@ class NetChainController(object):
         try: 
             sniff(iface=cpu_interfaces,filter='udp dst port 35678 and not ether dst ff:ff:ff:ff:ff:ff', prn=self.recv_msg_cpu)
         except KeyboardInterrupt: 
-            self.save_nodes_assignment()
+            
             sys.exit() #on ctrl-c terminate program 
 
     def wait_fail_over(self):
@@ -308,7 +342,7 @@ class NetChainController(object):
         print keys
         for key in keys:
             
-            self.insert_index_to_switch_table(newsw,key)
+            self.find_index_to_switch_table(newsw,key)
             val1=self.controllers[refsw].register_read('key_value_reg',self.sw_memory_key_index[refsw].index(key))
             self.controllers[newsw].register_write('key_value_reg',self.sw_memory_key_index[newsw].index(key),val1)
             self.keys[key][self.keys[key].index(failsw)]=newsw

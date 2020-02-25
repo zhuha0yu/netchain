@@ -28,7 +28,7 @@ int main(int argc,char *args[])
         std::string operation;
         queue_return result;
         
-        std::cout<<"Please enter command:<operation> <key>( <value>)"<<std::endl;
+        std::cout<<"Please enter command:<operation> <key>( <value>). Enter help for help:"<<std::endl;
         std::cin>>operation;
         transform(operation.begin(),operation.end(),operation.begin(),::tolower);
         //to lower case
@@ -49,7 +49,7 @@ int main(int argc,char *args[])
         }
         else if(operation=="evaluate")
         {
-            start_evaluate(chain_nodes);
+            start_evaluate(&chain_nodes);
             continue;
         }
         else if(operation=="key"||operation=="keys")
@@ -69,9 +69,10 @@ int main(int argc,char *args[])
             std::cout<<"write <key> <value> : Write value of the key in NetChain Key-Value storage"<<std::endl;
             std::cout<<"read <key> : Read value of the key from NetChain Key-Value storage"<<std::endl;
             std::cout<<"update : update Virtual nodes from files"<<std::endl;
+            std::cout<<"key : show available keys and chain of them"<<std::endl;
             std::cout<<"node : print chain ips"<<std::endl;
             std::cout<<"evaluate : start evaluation"<<std::endl;
-            
+            continue;
         }
         else if(operation!="read"&&operation!="delete"&&operation!="write"&&operation!="insert")
         {

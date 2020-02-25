@@ -2,7 +2,7 @@
 
 
 
-queue_return send_queue(chain_node* chain_nodes,uint16_t operationh,uint16_t keyh,uint64_t valueh=0)
+queue_return send_queue(chain_node* chain_nodes,uint16_t operationh,uint16_t keyh,uint64_t valueh)
 {
     uint16_t count_n=htons(num_f+1);
     sockaddr_in src_addr;
@@ -32,6 +32,14 @@ queue_return send_queue(chain_node* chain_nodes,uint16_t operationh,uint16_t key
     uint64_t value=htonl64(valueh);
     memcpy(nc_send+10+4*(num_f+1),&value,8);
     queue_return result;
+    int sock=socket(AF_INET,SOCK_DGRAM,0);
+    if(sock<0)
+    {
+        result.is_success=false;
+        result.value=0;
+        return result;
+    } 
+    setsockopt(sock,SOL_SOCKET,SO_RCVTIMEO,(const char*) &(chain_nodes->timeout),sizeof(timeval));
     for(int i=0;i<MAX_RETRY;i++)
     {   
         
@@ -42,9 +50,9 @@ queue_return send_queue(chain_node* chain_nodes,uint16_t operationh,uint16_t key
 
         _nc_send args;
         if(operationh!=2)
-            args.socket=chain_nodes->nodes.at(chain_nodes->key_chain.at(keyh).nodes[0]).node_socket;
+            args.socket=sock;
         else
-            args.socket=chain_nodes->nodes.at(chain_nodes->key_chain.at(keyh).nodes[num_f]).node_socket;
+            args.socket=sock;
         args.nc_send=nc_send;
         args.totallen=totallen;
         args.flag=0;
@@ -64,11 +72,14 @@ queue_return send_queue(chain_node* chain_nodes,uint16_t operationh,uint16_t key
         key=ntohs(key);
         if(nc_recv.key==key&&nc_recv.operation==5)
         {
+            close(sock);
             result.is_success=true;
             result.value=nc_recv.value;
+            
             return result;
         }
     }
+    close(sock);
     result.is_success=false;
     result.value=0;
     return result;
@@ -118,3 +129,5 @@ uint16_t getopfromstr(std::string str)
     else if(str=="delete") return 4;
     return 0;
 }
+
+

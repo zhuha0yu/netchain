@@ -37,8 +37,9 @@ struct queue_return
     bool is_success;
     uint64_t value;
 };
+queue_return send_queue(chain_node* chain_nodes,uint16_t operation,uint16_t key,uint64_t value=0);
 #endif
-queue_return send_queue(chain_node* chain_nodes,uint16_t operation,uint16_t key,uint64_t value);
+
 uint64_t ntohl64(uint64_t);
 uint64_t htonl64(uint64_t);
 void ntoh(nc_payload_recv*);

@@ -51,7 +51,6 @@ class RoutingController(object):
         self.controllers[sw].table_add("op","NetChain_delete",[str(4)],[])
     def pkt_for_me(self,sw):
         self.controllers[sw].table_add("pkt_for_me", "NoAction", ["20.0."+str(sw[1:])+".0/24",'35678'],[])
-        self.controllers[sw].table_add("invalid_two_ip","invalid_2ip",['2'],[])
 
     def seq(self,sw):
         self.controllers[sw].table_add("seq","assignseq",[str(0)],[])

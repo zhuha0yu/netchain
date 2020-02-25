@@ -10,7 +10,7 @@ chain_node::chain_node()
     
    
     timeout.tv_sec=0;
-    timeout.tv_usec=500000;//set timeout
+    timeout.tv_usec=100000;//set timeout
     
     lenh=num_f+1;
     lenn=htons(num_f+1);

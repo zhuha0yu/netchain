@@ -23,9 +23,9 @@
 our source code will be 3 parts:
 
 * Controller
-  * `routingcontrolelr.py` : defines all the stuff that controller will do for initialization, including routing table establishment, mandatory table filling.
-  * `crc.py` : defines the function that used for consistancy hashing.
+  * `routingcontroller.py` : defines all the stuff that controller will do for initialization, including routing table establishment, mandatory table filling.
   * `NetChain-controller.py` : includes the handler for insert/delete operations and script for fast fail-over and fast recovery.
+  * `hashing.py` : includes the consistent hashing algorithm and node assignment.
 * Data plane
   * `p4src/netchain.p4` : the main entrance of data plane functions.
   * `p4src/include/*` : defines some basic components in data plane: parser, deparser, headers and constant valuse.
@@ -35,39 +35,29 @@ our source code will be 3 parts:
 * Host
   * `hostsrc/send.cpp` : the main entrance of host functions, initials the chain state, parses user input and sends the NetChain packet.
   * `hostsrc/chain.cpp` : defines the data stucture uses to store chain information, and the functions that updates it.
+  * `hostsrc/md5.cpp` : defines an function to calculate the MD5 hashing value of a string.
+  * `hostsrc/hashing.cpp` : defined a series of functions to obtain the hashing result of a key.
   * `hostsrc/queue.cpp` : generate and send the NetChain packet, and proceed the response.
-
 
 ## Build and installation
 
 ### start NetChain without fast fail-over and fast recovery
+
 To start, please run command:
 
-    sudo make NetChain
+    sudo make switch
 
-or
+In another terminal please run:
 
-    sudo make
+    sudo make controller
 
-Then please start a xterm window for h1 or h2 and start queue.
+to start the p4 controller.
 
-To test fast fail-over and fast recovery, please run
+Then please start a xterm window for h1 or h2 and start host program using:
 
-    sudo make NetChain-ff
+    ./host
 
-And in another terminal please run
+Now everything is ready, please start to queue or test. To start evaluate, please enter `evaluate` when asked to enter commands. To load the key and chain assignment, please enter `update`.
 
-    sudo python NetChain-controller.py
-
-Then please start a xterm window for h1 or h2 and run
-
-    ./send
-
-Now everything is ready, please start queue.
-
-To test fast fail-over and fast-recovery, please input a legal switch name in `NetChain-controller.py`. e.g. `s2`.
-
-Now you can test the functionality of fast fail-over and fast recovery.
-
-
+To test fast fail-over and fast-recovery, please input a legal switch name in `NetChain-controller.py`. e.g. `s2`. The fast fail-over will perform. After it finishes,please enter anything and press enter to start fast-recovery.
 

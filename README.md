@@ -1,16 +1,26 @@
 # Project group15(NetChain)
 
-#### Authors
+## Authors
+
     * Francisco Dumont (fdumontd@student.ethz.ch)
     * Haoyu Zhu (haozhu@student.ethz.ch)
 
-# Introduction
+## Introduction
 
-TODO
+This is the cource project of Advanced Topics in Communication Networks. The project is to reproduce a paper: [NetChain: Scale-Free Sub-RTT Coordination](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-jin.pdf).
 
-# NetChain basis
+This project contains 4 folders:
 
-other things TODO
+* `src/*` contains our implementation files and testing scripts.
+* `evaluation/*` contains evaluation log and result.
+* `report/*` contains report of the project.
+* `presentation` contains presentation slide.
+
+## NetChain basis
+
+NetChain is a switch based distributed key-value storage system to archive a quick and reliable key-value storage. The consistent hashing is used to keep scalaibility and virtual nodes is used to keep load balanced. A chain replication is used to boost the sync between switches. A fast fail-over and recovery method is implemented in the project to make it robust.
+
+The Netchain packet is structed using UDP payload and have some special structure to routing through the chain.
 
 ## NetChain UDP messgae frame stracture
 
@@ -32,4 +42,3 @@ other things TODO
 ### Topology
 
 ![alt Topology](./report/figures/Topology.png "Topology")
-
